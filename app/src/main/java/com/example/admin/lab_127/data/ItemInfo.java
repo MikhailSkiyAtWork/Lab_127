@@ -1,15 +1,17 @@
 package com.example.admin.lab_127.data;
 
+import android.graphics.Bitmap;
+
 /**
  * Created by Mikhail Valuyskiy on 22.06.2015.
  */
 public class ItemInfo {
     private String title_;
     private String description_;
-    private int imageId_;
+    private Bitmap image_;
 
-    public ItemInfo(int imageId, String title, String description) {
-        this.imageId_ = imageId;
+    public ItemInfo(Bitmap image, String title, String description) {
+        this.image_ = image;
         this.title_ = title;
         this.description_ = description;
     }
@@ -25,5 +27,9 @@ public class ItemInfo {
 
     public String getDescription() {
         return description_;
+    }
+
+    public Bitmap getImage(){
+        return image_;
     }
 }

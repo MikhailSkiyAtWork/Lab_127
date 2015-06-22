@@ -3,6 +3,7 @@ package com.example.admin.lab_127;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
@@ -77,9 +78,24 @@ public class CustomHeader extends LinearLayout {
     }
 
     private void init(AttributeSet attributeSet, int defStyle) {
-        View view = inflate(getContext(), R.layout.custom_view, null);
-        titleTextView_ = (TextView) view.findViewById(R.id.tv1);
-        detailsTextView_ = (TextView) view.findViewById(R.id.tv2);
-        addView(view);
+        //View view = inflate(getContext(), R.layout.custom_view, null);
+
+        LinearLayout linearLayout = new LinearLayout(getContext());
+        linearLayout.setOrientation(LinearLayout.VERTICAL);
+
+        titleTextView_ = new TextView(getContext());
+        titleTextView_.setText(R.string.title);
+        titleTextView_.setTextColor(Color.rgb(200, 0, 0));
+       // titleTextView_.setPadding(R.dimen.padding_left_for_text,0,0,0);
+
+
+        detailsTextView_ = new TextView(getContext());
+        detailsTextView_.setText(R.string.details);
+        detailsTextView_.setTextColor(Color.rgb(200, 0, 0));
+       // detailsTextView_.setPadding(R.dimen.padding_left_for_text,0,0,0);
+
+        addView(linearLayout);
+        linearLayout.addView(titleTextView_);
+        linearLayout.addView(detailsTextView_);
     }
 }

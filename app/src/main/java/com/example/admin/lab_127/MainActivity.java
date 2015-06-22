@@ -2,11 +2,15 @@ package com.example.admin.lab_127;
 
 import android.app.Activity;
 import android.content.res.TypedArray;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 
 import com.example.admin.lab_127.data.ItemInfo;
@@ -24,16 +28,41 @@ public class MainActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
 
-        CustomHeader cv = (CustomHeader)this.findViewById(R.id.custom_view);
-        cv.setTitle("Hi");
-        cv.setDetails("People");
+
+        LinearLayout layout = new LinearLayout(getApplicationContext());
+        ListView listView = new ListView(getApplicationContext());
+
+        CustomHeader customHeader = new CustomHeader(getApplicationContext());
+
+
+        CustomListItem customListItem = new CustomListItem(getApplicationContext());
+
+        layout.addView(customHeader);
+
+
+      //  layout.addView(customListItem);
+
 
         List<ItemInfo> values = new ArrayList<ItemInfo>();
-        ItemInfo info = new ItemInfo("Hi","android");
-        ListView listView = (ListView) this.findViewById(R.id.list_view);
+        Bitmap image = BitmapFactory.decodeResource(getResources(), R.mipmap.clear);
+        ItemInfo info = new ItemInfo(image,"Hi","android");
+        ItemInfo info2 = new ItemInfo(image,"Hi2","android");
+        values.add(info);
+        values.add(info2);
+
         Adapter_ = new ItemAdapter(this, values);
+
+        setContentView(R.layout.activity_main);
+
+//        ListView lv = new ListView(this);
+//        String[] val = new String[]{"jiw","dfgg"};
+//
+//        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,customListItem,val);
+//        lv.setAdapter(adapter);
+
+        layout.addView(listView);
+        setContentView(layout);
     }
 
     @Override

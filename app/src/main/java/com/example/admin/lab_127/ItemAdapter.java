@@ -14,18 +14,18 @@ import java.util.List;
  * Created by Mikhail Valuyskiy on 22.06.2015.
  */
 public class ItemAdapter extends ArrayAdapter<ItemInfo> {
+
     public ItemAdapter(Context context, List<ItemInfo> items) {
         super(context, R.layout.custom_list_item, items);
+
     }
 
     @Override
     public View getView(int postition,View convertView, ViewGroup parent){
-
-        CustomListItem customListItem = (CustomListItem)convertView.findViewById(R.id.custom_item);
         ItemInfo item = this.getItem(postition);
-
-        customListItem.setListItemTitle(item.getTitle());
-        customListItem.setListItemTitle(item.getDescription());
+        CustomListItem customListItem_ = new CustomListItem(getContext());
+        customListItem_.setListItemTitle(item.getTitle());
+        customListItem_.setListItemTitle(item.getDescription());
         return convertView;
     }
 }

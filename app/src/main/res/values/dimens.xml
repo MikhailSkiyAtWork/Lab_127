@@ -5,9 +5,7 @@
 
 
     <!-- Common values for list item layout -->
-    <dimen name="common_padding_left_for_list">30dp</dimen>
-    <dimen name="common_padding_top_for_list">10dp</dimen>
-    <dimen name="common_width_for_list">25dp</dimen>
-    <dimen name="common_height_for_list">25dp</dimen>
+    <dimen name="padding_left_for_image">16dp</dimen>
+    <dimen name="padding_left_for_text">16dp</dimen>
 
 </resources>
