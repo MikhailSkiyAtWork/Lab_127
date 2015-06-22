@@ -7,18 +7,33 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ListView;
 
+import com.example.admin.lab_127.data.ItemInfo;
 
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ * Created by Mikhail Valuyskiy on 19.06.2015.
+ */
 public class MainActivity extends Activity {
+
+    private ItemAdapter Adapter_;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        CustomView cv = (CustomView)this.findViewById(R.id.customView);
+        CustomHeader cv = (CustomHeader)this.findViewById(R.id.custom_view);
         cv.setTitle("Hi");
         cv.setDetails("People");
+
+        List<ItemInfo> values = new ArrayList<ItemInfo>();
+        ItemInfo info = new ItemInfo("Hi","android");
+        ListView listView = (ListView) this.findViewById(R.id.list_view);
+        Adapter_ = new ItemAdapter(this, values);
     }
 
     @Override

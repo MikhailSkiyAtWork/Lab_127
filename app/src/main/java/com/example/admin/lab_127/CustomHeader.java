@@ -15,29 +15,31 @@ import org.w3c.dom.Text;
 /**
  * Created by Mikhail Valuyskiy on 19.06.2015.
  */
-public class CustomView extends LinearLayout {
+public class CustomHeader extends LinearLayout {
 
+    //region Private fields
     private TextView titleTextView_;
     private TextView detailsTextView_;
+    //endregion
 
     //region Public constructors
-    public CustomView(Context context) {
+    public CustomHeader(Context context) {
         super(context);
         init(null, 0);
     }
 
-    public CustomView(Context context, AttributeSet attributeSet) {
+    public CustomHeader(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
         init(attributeSet, 0);
     }
 
-    public CustomView(Context context, AttributeSet attributeSet, int defStyle) {
+    public CustomHeader(Context context, AttributeSet attributeSet, int defStyle) {
         super(context, attributeSet, defStyle);
         init(attributeSet, defStyle);
     }
     //endregion
 
-    //region accessors
+    //region Accessors
     public void setTitle(String title) {
         this.titleTextView_.setText(title);
     }
@@ -56,10 +58,10 @@ public class CustomView extends LinearLayout {
     //endregion
 
     @Override
-    public boolean onTouchEvent(MotionEvent event){
+    public boolean onTouchEvent(MotionEvent event) {
         int action = event.getAction();
-        boolean touched=false;
-        switch (action){
+        boolean touched = false;
+        switch (action) {
             case MotionEvent.ACTION_DOWN:
                 touched = true;
                 break;
@@ -67,7 +69,7 @@ public class CustomView extends LinearLayout {
                 break;
         }
 
-        if (touched){
+        if (touched) {
             Toast.makeText(getContext(), (String) "HI, I am custom View!",
                     Toast.LENGTH_SHORT).show();
         }

@@ -11,10 +11,18 @@
     tools:context=".MainActivity">
 
 
-    <com.example.admin.lab_127.CustomView
-        android:id="@+id/customView"
+    <com.example.admin.lab_127.CustomHeader
+        android:id="@+id/custom_view"
         android:layout_width = "wrap_content"
         android:layout_height="wrap_content"
         />
+
+    <ListView
+        android:id="@+id/list_view"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="70dp"/>
+
+
 
 </RelativeLayout>
