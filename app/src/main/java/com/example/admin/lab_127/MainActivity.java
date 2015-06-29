@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
 import android.widget.ListView;
@@ -31,17 +32,21 @@ public class MainActivity extends Activity {
 
 
         LinearLayout layout = new LinearLayout(getApplicationContext());
-        ListView listView = new ListView(getApplicationContext());
+        ListView listView = new ListView(this);
+        listView.setPadding(0,70,0,0);
+
+
 
         CustomHeader customHeader = new CustomHeader(getApplicationContext());
 
 
-        CustomListItem customListItem = new CustomListItem(getApplicationContext());
+
+       // CustomListItem customListItem = new CustomListItem(getApplicationContext());
 
         layout.addView(customHeader);
 
 
-      //  layout.addView(customListItem);
+
 
 
         List<ItemInfo> values = new ArrayList<ItemInfo>();
@@ -51,7 +56,12 @@ public class MainActivity extends Activity {
         values.add(info);
         values.add(info2);
 
-        Adapter_ = new ItemAdapter(this, values);
+        for (int i=0;i<10;i++){
+            ItemInfo info4 = new ItemInfo(image,"Hi"+i,"android" +i);
+            values.add(info4);
+        }
+
+
 
         setContentView(R.layout.activity_main);
 
@@ -60,6 +70,10 @@ public class MainActivity extends Activity {
 //
 //        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,customListItem,val);
 //        lv.setAdapter(adapter);
+
+        Adapter_ = new ItemAdapter(this, values);
+        listView.setAdapter(Adapter_);
+
 
         layout.addView(listView);
         setContentView(layout);

@@ -83,6 +83,7 @@ public class CustomHeader extends LinearLayout {
         LinearLayout linearLayout = new LinearLayout(getContext());
         linearLayout.setOrientation(LinearLayout.VERTICAL);
 
+
         titleTextView_ = new TextView(getContext());
         titleTextView_.setText(R.string.title);
         titleTextView_.setTextColor(Color.rgb(200, 0, 0));

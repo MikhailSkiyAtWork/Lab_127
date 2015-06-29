@@ -58,13 +58,17 @@ public class CustomListItem extends LinearLayout{
         return listItemDetails_.getText().toString();
     }
 
+    public void setListItemImage(Bitmap itemImage){
+        this.listItemImage_.setImageBitmap(itemImage);
+    }
+
 
     //endregion
 
     private void init(AttributeSet attributeSet, int defStyle) {
         LinearLayout linearLayout = new LinearLayout(getContext());
         linearLayout.setOrientation(LinearLayout.VERTICAL);
-        linearLayout.setPadding(0, 70, 0, 0);
+        linearLayout.setPadding(0, 0, 0, 0);
         listItemTitle_ = new TextView(getContext());
         listItemTitle_.setText("Title");
 
@@ -77,7 +81,5 @@ public class CustomListItem extends LinearLayout{
         addView(linearLayout);
         linearLayout.addView(listItemTitle_);
         linearLayout.addView(listItemDetails_);
-
-
     }
 }
