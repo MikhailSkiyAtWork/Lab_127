@@ -4,9 +4,11 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Color;
+import android.support.v7.widget.LinearLayoutCompat;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -78,22 +80,22 @@ public class CustomHeader extends LinearLayout {
     }
 
     private void init(AttributeSet attributeSet, int defStyle) {
-        //View view = inflate(getContext(), R.layout.custom_view, null);
-
         LinearLayout linearLayout = new LinearLayout(getContext());
         linearLayout.setOrientation(LinearLayout.VERTICAL);
+        linearLayout.setPadding((int) getResources().getDimension(R.dimen.padding_left_for_header),
+                (int) getResources().getDimension(R.dimen.padding_top_for_header),
+                (int) getResources().getDimension(R.dimen.padding_right_for_header),
+                0);
 
+        linearLayout.setLayoutParams(new LinearLayoutCompat.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, (int) getResources().getDimension(R.dimen.list_item_height)));
 
         titleTextView_ = new TextView(getContext());
         titleTextView_.setText(R.string.title);
         titleTextView_.setTextColor(Color.rgb(200, 0, 0));
-       // titleTextView_.setPadding(R.dimen.padding_left_for_text,0,0,0);
-
 
         detailsTextView_ = new TextView(getContext());
         detailsTextView_.setText(R.string.details);
         detailsTextView_.setTextColor(Color.rgb(200, 0, 0));
-       // detailsTextView_.setPadding(R.dimen.padding_left_for_text,0,0,0);
 
         addView(linearLayout);
         linearLayout.addView(titleTextView_);

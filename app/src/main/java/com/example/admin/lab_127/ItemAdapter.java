@@ -20,20 +20,23 @@ public class ItemAdapter extends ArrayAdapter<ItemInfo> {
 
     public ItemAdapter(Context context, List<ItemInfo> items) {
         super(context, R.layout.custom_list_item, items);
-
     }
 
     @Override
-    public View getView(int postition,View convertView, ViewGroup parent){
+    public View getView(int position,View convertView, ViewGroup parent){
         HorizontalScrollView horizontalScrollView = new HorizontalScrollView(getContext());
+
         LinearLayout layout = new LinearLayout(getContext());
         layout.setLayoutParams(new LinearLayout.LayoutParams(
                 ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT
         ));
 
+        float paddingLeft= getContext().getResources().getDimension(R.dimen.padding_left_for_image);
+        layout.setPadding((int)paddingLeft,0,0,0);
+
        // layout.setPadding(0, 70, 0, 0);
 
-        ItemInfo item = this.getItem(postition);
+        ItemInfo item = this.getItem(position);
         CustomListItem customListItem_ = new CustomListItem(getContext());
         customListItem_.setListItemTitle(item.getTitle());
         customListItem_.setListItemDetails(item.getDescription());
@@ -44,14 +47,5 @@ public class ItemAdapter extends ArrayAdapter<ItemInfo> {
         horizontalScrollView.addView(layout);
         convertView = horizontalScrollView;
         return convertView;
-
-
-//        ItemInfo item = this.getItem(postition);
-//        convertView =  LayoutInflater.from(getContext()).inflate(R.layout.list_item,parent,false);
-//
-//        CustomListItem customListItem_ = new CustomListItem(getContext());
-//        customListItem_.setListItemTitle(item.getTitle());
-//        customListItem_.setListItemTitle(item.getDescription());
-//        return convertView;
     }
 }

@@ -1,19 +1,33 @@
-package com.example.admin.lab_127;
+package com.example.admin.deb;
 
 import android.app.Activity;
+import android.content.res.TypedArray;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.drawable.Drawable;
+import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 
+import com.example.admin.lab_127.CustomHeader;
+import com.example.admin.lab_127.ItemAdapter;
+import com.example.admin.lab_127.R;
 import com.example.admin.lab_127.data.ItemInfo;
 
+import org.lucasr.dspec.DesignSpec;
 import org.lucasr.dspec.DesignSpecFrameLayout;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import butterknife.ButterKnife;
+import butterknife.InjectView;
 
 /**
  * Created by Mikhail Valuyskiy on 19.06.2015.
@@ -52,6 +66,8 @@ public class MainActivity extends Activity {
         layout.addView(listView);
         setContentView(layout);
 
+        DesignSpec designSpec = DesignSpec.fromResource(layout, R.raw.main_activity_spec);
+        layout.getOverlay().add(designSpec);
     }
 
     @Override

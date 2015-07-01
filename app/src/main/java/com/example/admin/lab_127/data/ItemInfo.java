@@ -1,6 +1,7 @@
 package com.example.admin.lab_127.data;
 
 import android.graphics.Bitmap;
+import android.graphics.drawable.Drawable;
 
 /**
  * Created by Mikhail Valuyskiy on 22.06.2015.
@@ -8,9 +9,9 @@ import android.graphics.Bitmap;
 public class ItemInfo {
     private String title_;
     private String description_;
-    private Bitmap image_;
+    private Drawable image_;
 
-    public ItemInfo(Bitmap image, String title, String description) {
+    public ItemInfo(Drawable image, String title, String description) {
         this.image_ = image;
         this.title_ = title;
         this.description_ = description;
@@ -29,7 +30,7 @@ public class ItemInfo {
         return description_;
     }
 
-    public Bitmap getImage(){
+    public Drawable getImage(){
         return image_;
     }
 }

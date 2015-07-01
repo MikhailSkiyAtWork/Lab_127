@@ -6,7 +6,7 @@ android {
 
     defaultConfig {
         applicationId "com.example.admin.lab_127"
-        minSdkVersion 11
+        minSdkVersion 18
         targetSdkVersion 22
         versionCode 1
         versionName "1.0"
@@ -15,6 +15,20 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    productFlavors{
+        pro {
+            packageName "com.example.admin.lab_127"
+        }
+        deb {
+            packageName "com.example.admin.deb"
+            dependencies {
+                compile 'com.jakewharton:butterknife:5.1.2'
+                compile 'com.squareup.picasso:picasso:2.3.4'
+                compile 'org.lucasr.dspec:dspec:0.1.1'
+            }
         }
     }
 }
