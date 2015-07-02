@@ -7,6 +7,8 @@
     <string name="title">Title</string>
     <string name="details">Details</string>
 
+    <string name="toast">HI, I am custom View!</string>
+
     <!-- Values for option menu -->
     <string name="show_baseline_grid">Show baseline grid</string>
     <string name="show_keylines">Show keylines</string>

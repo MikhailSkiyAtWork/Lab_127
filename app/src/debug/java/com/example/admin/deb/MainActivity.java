@@ -7,6 +7,7 @@ import android.graphics.BitmapFactory;
 import android.graphics.drawable.Drawable;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -26,15 +27,11 @@ import org.lucasr.dspec.DesignSpecFrameLayout;
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.ButterKnife;
-import butterknife.InjectView;
-
 /**
  * Created by Mikhail Valuyskiy on 19.06.2015.
  */
 public class MainActivity extends Activity {
-    DesignSpecFrameLayout designSpecLayout_;
-
+    private DesignSpecFrameLayout designSpecLayout_;
     private ItemAdapter Adapter_;
 
     @Override
@@ -48,11 +45,10 @@ public class MainActivity extends Activity {
         ListView listView = new ListView(this);
 
         listView.setPadding(0, (int)getResources().getDimension(R.dimen.list_item_top), 0, 0);
-
         listView.setDivider(null);
 
         List<ItemInfo> values = new ArrayList<ItemInfo>();
-        Drawable image = getResources().getDrawable(R.mipmap.clear);
+        Drawable image = getResources().getDrawable(R.mipmap.ic_launcher);
 
         for (int i = 0; i < 20; i++) {
             ItemInfo info = new ItemInfo(image, getResources().getString(R.string.title) + i, getResources().getString(R.string.details) + i);
@@ -68,6 +64,7 @@ public class MainActivity extends Activity {
 
         DesignSpec designSpec = DesignSpec.fromResource(layout, R.raw.main_activity_spec);
         layout.getOverlay().add(designSpec);
+        Log.v("Debug", "DEBUG MODE");
     }
 
     @Override
@@ -113,7 +110,6 @@ public class MainActivity extends Activity {
                         return true;
                     }
                 });
-//        getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
 

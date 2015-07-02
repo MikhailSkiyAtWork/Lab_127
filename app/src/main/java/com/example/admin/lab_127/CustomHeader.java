@@ -73,7 +73,7 @@ public class CustomHeader extends LinearLayout {
         }
 
         if (touched) {
-            Toast.makeText(getContext(), (String) "HI, I am custom View!",
+            Toast.makeText(getContext(), getResources().getString(R.string.toast),
                     Toast.LENGTH_SHORT).show();
         }
         return true;

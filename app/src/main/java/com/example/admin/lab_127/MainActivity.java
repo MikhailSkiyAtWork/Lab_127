@@ -19,8 +19,6 @@ import java.util.List;
  * Created by Mikhail Valuyskiy on 19.06.2015.
  */
 public class MainActivity extends Activity {
-    DesignSpecFrameLayout designSpecLayout_;
-
     private ItemAdapter Adapter_;
 
     @Override
@@ -51,54 +49,6 @@ public class MainActivity extends Activity {
         layout.addView(customHeader);
         layout.addView(listView);
         setContentView(layout);
-
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-
-        menu.add(getString(R.string.show_baseline_grid))
-                .setCheckable(true)
-                .setChecked(designSpecLayout_.getDesignSpec().isBaselineGridVisible())
-                .setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
-                    @Override
-                    public boolean onMenuItemClick(MenuItem item) {
-                        boolean checked = !item.isChecked();
-                        item.setChecked(checked);
-                        designSpecLayout_.getDesignSpec().setBaselineGridVisible(checked);
-                        return true;
-                    }
-                });
-
-        menu.add(getString(R.string.show_keylines))
-                .setCheckable(true)
-                .setChecked(designSpecLayout_.getDesignSpec().areKeylinesVisible())
-                .setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
-                    @Override
-                    public boolean onMenuItemClick(MenuItem item) {
-                        boolean checked = !item.isChecked();
-                        item.setChecked(checked);
-                        designSpecLayout_.getDesignSpec().setKeylinesVisible(checked);
-                        return true;
-                    }
-                });
-
-        menu.add(getString(R.string.show_spacings))
-                .setCheckable(true)
-                .setChecked(designSpecLayout_.getDesignSpec().areSpacingsVisible())
-                .setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
-                    @Override
-                    public boolean onMenuItemClick(MenuItem item) {
-                        boolean checked = !item.isChecked();
-                        item.setChecked(checked);
-                        designSpecLayout_.getDesignSpec().setSpacingsVisible(checked);
-                        return true;
-                    }
-                });
-//        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
     }
 
     @Override
