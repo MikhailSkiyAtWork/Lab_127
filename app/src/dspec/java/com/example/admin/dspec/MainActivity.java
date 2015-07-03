@@ -48,7 +48,7 @@ public class MainActivity extends Activity {
         listView.setDivider(null);
 
         List<ItemInfo> values = new ArrayList<ItemInfo>();
-        Drawable image = getResources().getDrawable(R.mipmap.ic_launcher);
+        Drawable image = getResources().getDrawable(R.mipmap.clear);
 
         for (int i = 0; i < 20; i++) {
             ItemInfo info = new ItemInfo(image, getResources().getString(R.string.title) + i, getResources().getString(R.string.details) + i);
