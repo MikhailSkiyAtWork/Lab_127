@@ -44,7 +44,7 @@ public class MainActivity extends Activity {
         layout.setOrientation(LinearLayout.VERTICAL);
         ListView listView = new ListView(this);
 
-        listView.setPadding(0, (int)getResources().getDimension(R.dimen.list_item_top), 0, 0);
+        listView.setPadding(0, (int) getResources().getDimension(R.dimen.list_item_top), 0, 0);
         listView.setDivider(null);
 
         List<ItemInfo> values = new ArrayList<ItemInfo>();
@@ -64,7 +64,6 @@ public class MainActivity extends Activity {
 
         DesignSpec designSpec = DesignSpec.fromResource(layout, R.raw.main_activity_spec);
         layout.getOverlay().add(designSpec);
-        Log.v("Debug", "DEBUG MODE");
     }
 
     @Override

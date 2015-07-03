@@ -78,8 +78,8 @@ public class CustomListItem extends LinearLayout {
         // Linear Layout(Horizontal) for Image+TextViews
         LinearLayout horizontalLayout = new LinearLayout(getContext());
         horizontalLayout.setOrientation(LinearLayout.HORIZONTAL);
-        horizontalLayout.setLayoutParams(new LinearLayoutCompat.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT,(int)getResources().getDimension(R.dimen.list_item_height)));
-        horizontalLayout.setPadding(0,(int)getResources().getDimension(R.dimen.list_item_top),0,0);
+        horizontalLayout.setLayoutParams(new LinearLayoutCompat.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, (int) getResources().getDimension(R.dimen.list_item_height)));
+        horizontalLayout.setPadding(0, (int) getResources().getDimension(R.dimen.list_item_top), 0, 0);
 
         // Initialize the item of ListView
         listItemTitle_ = new TextView(getContext());

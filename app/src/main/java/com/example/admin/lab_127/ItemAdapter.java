@@ -23,7 +23,7 @@ public class ItemAdapter extends ArrayAdapter<ItemInfo> {
     }
 
     @Override
-    public View getView(int position,View convertView, ViewGroup parent){
+    public View getView(int position, View convertView, ViewGroup parent) {
         HorizontalScrollView horizontalScrollView = new HorizontalScrollView(getContext());
 
         LinearLayout layout = new LinearLayout(getContext());
@@ -31,8 +31,8 @@ public class ItemAdapter extends ArrayAdapter<ItemInfo> {
                 ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT
         ));
 
-        float paddingLeft= getContext().getResources().getDimension(R.dimen.padding_left_for_image);
-        layout.setPadding((int)paddingLeft,0,0,0);
+        float paddingLeft = getContext().getResources().getDimension(R.dimen.padding_left_for_image);
+        layout.setPadding((int) paddingLeft, 0, 0, 0);
 
         ItemInfo item = this.getItem(position);
         CustomListItem customListItem_ = new CustomListItem(getContext());
