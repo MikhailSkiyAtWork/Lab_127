@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Lab_127</string>
+
+    <string name="view_description">Hello world!</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="title">Title</string>
+    <string name="details">Details</string>
+
+    <string name="toast">HI, I am custom View!</string>
+
+    <!-- Values for option menu -->
+    <string name="show_baseline_grid">Show baseline grid</string>
+    <string name="show_keylines">Show keylines</string>
+    <string name="show_spacings">Show spacings</string>
+
+</resources>
