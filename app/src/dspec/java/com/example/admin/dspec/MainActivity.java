@@ -1,4 +1,4 @@
-package com.example.admin.deb;
+package com.example.admin.lab_127;
 
 import android.app.Activity;
 import android.content.res.TypedArray;
