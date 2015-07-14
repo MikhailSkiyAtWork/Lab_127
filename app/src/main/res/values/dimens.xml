@@ -1,0 +1,26 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+
+    <!-- Common values for list item layout -->
+    <dimen name="padding_left_for_image">16dp</dimen>
+    <dimen name="padding_left_for_text">23dp</dimen>
+    <dimen name="padding_right_for_text">16dp</dimen>
+
+    <dimen name="list_item_height">72dp</dimen>
+    <dimen name="list_item_top">8dp</dimen>
+    <dimen name="list_item_left">72dp</dimen>
+
+    <dimen name="padding_top_for_header">23dp</dimen>
+    <dimen name="padding_right_for_header">16dp</dimen>
+    <dimen name="padding_left_for_header">72dp</dimen>
+    <dimen name="height_for_header">72dp</dimen>
+
+
+    <!--<dimen name="padding_left_for_te">-->
+
+    <dimen name="item_height">72dp</dimen>
+
+</resources>
